@@ -79,8 +79,11 @@ $(document).ready(function() {
     } else if (dataLength === 0) {
       alert("You didn't write anything");
     } else {
+      //need to clear form after posting
       const dataToPost = ajaxPost('/tweets', data, function() {
-        console.log(data)
+        $.get('/tweets', function(data) {
+          renderTweets(data)
+        })
       })
     }
   })
