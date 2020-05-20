@@ -45,5 +45,10 @@ body {
   margin-right: auto;
   margin-bottom: 0.5em;
   width: 60%;
+}
+
+article {
+  align-items: column;
   border: solid;
+  margin-bottom: 0.5em;
 }

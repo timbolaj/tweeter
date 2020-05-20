@@ -1,4 +1,4 @@
-.tweet-container:hover {
+article:hover {
   box-shadow: 5px 10px;
   color: black
 }
@@ -10,22 +10,22 @@
   justify-content: space-between;
 }
 
-.tweet-container article .tweet-head div span{
+article .tweet-head div span{
   font-size: 17px;
   align-self: center;
 }
 
-.tweet-container article .tweet-head div:nth-child(2) {
+article .tweet-head div:nth-child(2) {
   display: none;
 }
 
-.tweet-container:hover article .tweet-head div:nth-child(2) {
+article:hover .tweet-head div:nth-child(2) {
   display: contents;
   font-size: 17px;
   color: #b8b894;
 }
 
-.tweet-container article div {
+article div {
   margin: 0.5em;
   font-size: 20px
 }
