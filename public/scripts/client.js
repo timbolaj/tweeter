@@ -74,16 +74,19 @@ $(document).ready(function() {
     event.preventDefault();
     const data = $('form').serialize()
     const dataLength = (getText(data)).length;
+
     if (dataLength > 140) {
       alert('You wrote too many characters');
     } else if (dataLength === 0) {
       alert("You didn't write anything");
     } else {
-      //need to clear form after posting
       const dataToPost = ajaxPost('/tweets', data, function() {
+        //get the tweets immediately after submitting
         $.get('/tweets', function(data) {
           renderTweets(data)
         })
+        //Empty the textarea after submission
+        $('textarea').val("")
       })
     }
   })
