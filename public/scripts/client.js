@@ -44,7 +44,7 @@ const createTweetElement = tweetObj => {
 const renderTweets = arrayOfTweetObj => {
   //Need to append to .tweets-container
   for (obj of arrayOfTweetObj) {
-    $('.tweet-container').append(createTweetElement(obj))
+    $('.tweet-container').prepend(createTweetElement(obj))
   }
 }
 
