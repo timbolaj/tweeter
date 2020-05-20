@@ -7,23 +7,135 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <!-- Get the special fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,600;1,300&display=swap" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
+
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
+
+    <!-- New Tweets -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+
+    <!--Tweets-->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- Character count JS -->
+    <script type="text/javascript" src=/scripts/composer-char-counter.js></script>
+  
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class="nav-Bar">
+        <span id="logo">TWEETER</span>
+        <span id="new-tweet">Write <span id="filler-text">a new tweet</span></span>
+      </div>
+
     </nav>
 
+  <header class="head">
+    <div id="avatar">
+      <img src="/images/profile-hex.png"> 
+    </div>
+      <br>
+    <div id="name">
+      <h2>Chose</h2>
+    </div>
+  </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div id="submit-and-display">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <section class="tweet-container">
+        <article>
+
+          <header class="tweet-head">
+
+            <div>
+              <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d17ebedb-2d59-4680-a5a7-d61ede20a999/dlvmdu-a06f6054-300b-44b3-83ec-6f2e056b70f8.png/v1/fill/w_284,h_374,strp/hanamichi_sakuragi_by_leagsaidh_dlvmdu-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0zNzQiLCJwYXRoIjoiXC9mXC9kMTdlYmVkYi0yZDU5LTQ2ODAtYTVhNy1kNjFlZGUyMGE5OTlcL2Rsdm1kdS1hMDZmNjA1NC0zMDBiLTQ0YjMtODNlYy02ZjJlMDU2YjcwZjgucG5nIiwid2lkdGgiOiI8PTI4NCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.YLO_ZUPpydXV5xsalIVUDuOlSm2suZAP-opKpP_MOdE" width="50px" height="50px"/>
+              <span>Sakuragi</span>
+            </div>
+
+            <div>
+              <span>@Sakuragi</span>
+            </div>
+          </header>
+
+            <div>
+              <span>Reboundo king!</span>
+            </div>
+
+          <footer class="tweet-foot">
+            <div>
+              <span>10 days ago</span>
+            </div>
+            
+            <div class="tweet-reactions"> 
+              <span>like, retweet etc</span>
+            </div>
+          </footer>
+
+        </article>
+      </section>
+
+      <section class="tweet-container">
+        <article>
+
+          <header class="tweet-head">
+
+            <div>
+              <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d17ebedb-2d59-4680-a5a7-d61ede20a999/dlvmdu-a06f6054-300b-44b3-83ec-6f2e056b70f8.png/v1/fill/w_284,h_374,strp/hanamichi_sakuragi_by_leagsaidh_dlvmdu-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0zNzQiLCJwYXRoIjoiXC9mXC9kMTdlYmVkYi0yZDU5LTQ2ODAtYTVhNy1kNjFlZGUyMGE5OTlcL2Rsdm1kdS1hMDZmNjA1NC0zMDBiLTQ0YjMtODNlYy02ZjJlMDU2YjcwZjgucG5nIiwid2lkdGgiOiI8PTI4NCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.YLO_ZUPpydXV5xsalIVUDuOlSm2suZAP-opKpP_MOdE" width="50px" height="50px"/>
+              <span>Sakuragi</span>
+            </div>
+
+            <div>
+              <span>@Sakuragi</span>
+            </div>
+          </header>
+
+            <div>
+              <span>Reboundo king!</span>
+            </div>
+
+          <footer class="tweet-foot">
+            <div>
+              <span>10 days ago</span>
+            </div>
+            
+            <div class="tweet-reactions"> 
+              <span>like, retweet etc</span>
+            </div>
+          </footer>
+
+        </article>
+      </section>
+
+    </main>
   </body>
 </html>
+

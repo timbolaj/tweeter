@@ -1,0 +1,27 @@
+.nav-Bar {
+  border-style: solid;
+	border-color:#FF4500;
+  background-color: #4056A1;
+  height: 120px;
+  width: 100%;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#new-tweet {
+  color: #ffffff;
+  margin: 1.5em;
+}
+
+#logo {
+  font-family: "Bungee";
+  margin: 1.5em;
+}
+
+#filler-text{
+  font-family: sans-serif;
+}

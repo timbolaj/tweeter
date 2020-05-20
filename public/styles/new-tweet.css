@@ -1,0 +1,51 @@
+/* Tasks
+Modify the textbox
+- colour needs to match that of the container
+- One solid line at the bottom
+- font size needs to be smaller
+*/
+
+.new-tweet {
+  width: 60%;
+  margin: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  font-size: medium;
+  font-family: "Bungee";
+  background-color: #4056A1;
+  color: #ffffff;
+}
+
+#submit-and-display {
+  font-size: medium;
+  font-family: 'Bungee';
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+label {
+  font-size: smaller;
+}
+
+textarea {
+  resize: none;
+  border: none;
+  border-bottom: solid;
+  background-color: #f4f1ec;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 25px;
+  margin-top: 5px;
+  height: 30px;
+  width: 100%;
+}
+
+.negative-count {
+  color: red
+}
