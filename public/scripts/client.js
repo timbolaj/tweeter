@@ -4,17 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
- //Why cant i require moment in here without losing access to my database?
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 const createTweetElement = tweetObj => {
   //responsible for returning a tweet <article>
   //Must contain entire HTML structure of the tweet
-  const newTweet = 
+  const newTweet =
   `
   <article>
 
@@ -44,77 +43,77 @@ const createTweetElement = tweetObj => {
   </footer>
 
   </article>
-  `
+  `;
   return newTweet;
-}
+};
 
 const renderTweets = arrayOfTweetObj => {
   //Need to append to .tweets-container
-  for (obj of arrayOfTweetObj) {
-    $('.tweet-container').prepend(createTweetElement(obj))
+  for (let obj of arrayOfTweetObj) {
+    $('.tweet-container').prepend(createTweetElement(obj));
   }
-}
+};
 
 const ajaxPost = (url, data, callback) => {
   $.post(url, data, callback);
-}
+};
 
 const getText = queryString => {
   let text = '';
-  for (index in queryString) {
+  for (let index in queryString) {
     //text= is 5 chars long
     if (index > 4) {
       text += queryString[index];
     }
   }
-  return text.replace(/%20/g, " ");
-}
+  return decodeURIComponent(text);
+};
 
 const resetErrorMessage = violation => {
   if (violation === 'over count') {
     $(".error-message").hide();
     $(".error-message").empty();
-    $(".error-message").append("<p>😅😅😅 Too many characters fam 😅😅😅</p>")
+    $(".error-message").append("<p>😅😅😅 Too many characters fam 😅😅😅</p>");
     $(".error-message").slideDown("slow");
   } else if (violation === 'empty') {
     $(".error-message").hide();
     $(".error-message").empty();
-    $(".error-message").append("<p>🤔🤔🤔 You wrote nothing, do you even want to tweet? 🤔🤔🤔</p>")
+    $(".error-message").append("<p>🤔🤔🤔 You wrote nothing, do you even want to tweet? 🤔🤔🤔</p>");
     $(".error-message").slideDown("slow");
   } else {
     $(".error-message").hide();
     $(".error-message").empty();
   }
-}
+};
 
 $(document).ready(function() {
-  //Want to make a GET request
+  //Get the tweets
   const loadtweets = $.get('/tweets', function(data) {
-      renderTweets(data);
-  })
+    renderTweets(data);
+  });
 
   //When the button is clicked, ie when the form is submitted
   $('button').click(function(event) {
     event.preventDefault();
-    const data = $('form').serialize()
+    const data = $('form').serialize();
     const dataLength = (getText(data)).length;
 
     if (dataLength > 140) {
-      resetErrorMessage('over count')
+      resetErrorMessage('over count');
     } else if (dataLength === 0) {
-      resetErrorMessage('empty')
+      resetErrorMessage('empty');
     } else {
       resetErrorMessage();
       const dataToPost = ajaxPost('/tweets', data, function() {
         //get the tweets immediately after submitting
         $.get('/tweets', function(data) {
-          renderTweets(data)
-        })
+          renderTweets(data);
+        });
         //Empty the textarea after submission
-        $('textarea').val("")
-      })
+        $('textarea').val("");
+      });
     }
-  })
-})
+  });
+});
 
 
