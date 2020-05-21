@@ -22,13 +22,13 @@
   font-size: larger;
 }
 
-.nav-Bar p {
-  font-style: bold;
-  font: "Source Sans Pro";
-  margin: 1.5em;
+.nav-Bar span {
+  display: block;
+  margin-left: 3em;
 }
 
-.nav-Bar p span {
-  margin: 1.5em;
-  font: "Source Sans Pro";
+.nav-bar div {
+  display: block;
+  margin-right: 6em;
+  align-self: flex-end
 }

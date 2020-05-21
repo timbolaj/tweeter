@@ -44,3 +44,9 @@ article div {
 .tweet-foot div span {
   font-size: 15px;
 }
+
+.tweet-reactions {
+  display: flex;
+  justify-content: space-around;
+}
+
