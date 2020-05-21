@@ -1,7 +1,6 @@
 .nav-Bar {
-  border-style: solid;
-	border-color:#FF4500;
-  background-color: #4056A1;
+  background-color: #fffb00;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   height: 120px;
   width: 100%;
   color: #ffffff;
@@ -14,17 +13,33 @@
 
 .logo {
   font-family: "Bungee";
-  margin: 1.5em;
   font-size: larger;
+  margin: 1.5em;
 }
 
-.nav-Bar :nth-child(2) {
-  display: inline;
-  margin-left: 47em;
+.nav-Bar footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5em;
+  font-size: 85%;
 }
 
-.nav-Bar :nth-child(3) {
-  display: inline;
-  margin-top: 3.5em;
-  margin-right: 2.5em;
+.nav-Bar footer i {
+  color: red;
+}
+
+@media only screen and (min-width:1024px) {
+  .nav-Bar {
+    background-color: #4056A1;
+    background-image: none;
+    height: 120px;
+    width: 100%;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

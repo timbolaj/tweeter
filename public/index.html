@@ -19,6 +19,9 @@
     <!-- Header CSS -->
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
 
+    <!-- CDN moment.js to help with displaying the time -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" ></script>
+
     <!-- New Tweets -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
 
@@ -37,17 +40,22 @@
     <!-- Character count JS -->
     <script type="text/javascript" src=/scripts/composer-char-counter.js></script>
   
+    <!-- Prevents the 'zooming out' of the webpage as the dimensions get smaller -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <div class="nav-Bar">
-        <span class="logo">TWEETER</span> 
-        <span><strong>Write</strong> a new tweet</span>
-        <span>hello</span>
-      </div>
+    <nav class="nav-Bar">
 
+        <div> 
+          <span class="logo">TWEETER</span> 
+        </div>
+
+        <footer>         
+          <span><bold>Write</strong> a new tweet</span>
+          <i class="fas fa-angle-double-down"></i>
+        </footer>
 
     </nav>
 
@@ -57,7 +65,7 @@
     </div>
       <br>
     <div id="name">
-      <h2>Chose</h2>
+      <h2>Coronavirus</h2>
     </div>
   </header>
 
