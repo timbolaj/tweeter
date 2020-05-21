@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+ //Why cant i require moment in here without losing access to my database?
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -34,7 +35,7 @@ const createTweetElement = tweetObj => {
 
   <footer class="tweet-foot">
     <div>
-      <span>${tweetObj.created_at}</span>
+      <span>${moment(tweetObj.created_at).fromNow()}</span>
     </div>
     
     <div class="tweet-reactions"> 

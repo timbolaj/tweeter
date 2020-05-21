@@ -65,3 +65,21 @@ article {
   border: solid;
   margin-bottom: 0.5em;
 }
+
+/* 
+What changes need to be made?
+1024px and up:
+- Icon and user need to be on left side of page
+- Tweets need to be on right side of page
+
+After a minimum threshold:
+- navbar color needs to be that of the user's background
+
+Plan:
+- configure first to the mobile platform
+- Change to make here is to change the navbar color
+
+- Install breakpoint of min 1024px
+- Use flex-box row on the child elements of body
+
+*/
