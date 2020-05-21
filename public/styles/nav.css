@@ -12,23 +12,19 @@
   align-items: center;
 }
 
-.fas fa-angle-double-down {
-  justify-self: flex-end;
-}
-
 .logo {
   font-family: "Bungee";
   margin: 1.5em;
   font-size: larger;
 }
 
-.nav-Bar span {
-  display: block;
-  margin-left: 3em;
+.nav-Bar :nth-child(2) {
+  display: inline;
+  margin-left: 47em;
 }
 
-.nav-bar div {
-  display: block;
-  margin-right: 6em;
-  align-self: flex-end
+.nav-Bar :nth-child(3) {
+  display: inline;
+  margin-top: 3.5em;
+  margin-right: 2.5em;
 }
