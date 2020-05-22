@@ -1,5 +1,5 @@
 .nav-Bar {
-  background-color: #fffb00;
+  background-color: #9e6900;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   height: 120px;
   width: 100%;
@@ -23,7 +23,7 @@
   align-items: center;
   margin: 1.5em;
   font-size: 85%;
-  font-weight: 10%
+  font-weight: 10%;
 }
 
 .nav-Bar footer i {

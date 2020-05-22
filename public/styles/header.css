@@ -1,11 +1,21 @@
 .head {
   height: 400px;
-  background-color: #fffb00;
+  background-color: #9e6900;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-flow: column wrap
+  flex-flow: column wrap;
+  width: 100%
+}
+
+.head .name h2 {
+  color: white;
+  font-weight: 300;
+}
+
+.head .name h2 span {
+  font-weight: 600;
 }
 
 @media only screen and (min-width:1024px) {

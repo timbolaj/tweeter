@@ -13,6 +13,7 @@ article:hover {
 article .tweet-head div span{
   font-size: 17px;
   align-self: center;
+  font-weight: 300
 }
 
 article .tweet-head div:nth-child(2) {
@@ -23,11 +24,13 @@ article:hover .tweet-head div:nth-child(2) {
   display: contents;
   font-size: 17px;
   color: #b8b894;
+  font-weight: 600;
 }
 
 article div {
   margin: 0.5em;
-  font-size: 20px
+  font-size: 20px;
+  font-weight: 600
 }
 
 .tweet-foot {
@@ -39,6 +42,7 @@ article div {
   border-top: solid;
   display: flex;
   justify-content: space-between;
+  font-weight: 600;
 }
 
 .tweet-foot div span {

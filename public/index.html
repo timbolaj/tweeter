@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- Get the special fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,600;1,300&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+   
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
@@ -28,6 +28,9 @@
     <!--Tweets-->
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
     
+    <!--Error Message-->
+    <link rel="stylesheet" href="/styles/error-message.css" type="text/css"/>
+
     <!--Tweet Icons-->
     <script src="https://kit.fontawesome.com/a4c9bc2fa3.js" crossorigin="anonymous"></script>
 
@@ -60,12 +63,12 @@
     </nav>
 
     <header class="head">
-      <div id="avatar">
+      <div>
         <img src="/images/profile-hex.png"> 
       </div>
 
-      <div id="name">
-        <h2>Aaron</h2>
+      <div class="name">
+        <h2><span>Aaron</span> T</h2>
       </div>
     </header>
 
@@ -82,7 +85,7 @@
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
 
-          <div id="submit-and-display">
+          <div class="submit-and-display">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>

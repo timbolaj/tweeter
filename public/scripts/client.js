@@ -73,7 +73,7 @@ const resetErrorMessage = violation => {
   if (violation === 'over count') {
     $(".error-message").hide();
     $(".error-message").empty();
-    $(".error-message").append("<p>😅😅😅 Too many characters fam 😅😅😅</p>");
+    $(".error-message").append("<p>😅😅😅 Uh oh! Too many characters! 😅😅😅</p>");
     $(".error-message").slideDown("slow");
   } else if (violation === 'empty') {
     $(".error-message").hide();
@@ -87,16 +87,20 @@ const resetErrorMessage = violation => {
 };
 
 $(document).ready(function() {
+  //Auto-resize the textbox
+  $('textarea').on('input', function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+  })
+  
   //Get the tweets
-  const loadtweets = $.get('/tweets', function(data) {
-    renderTweets(data);
-  });
+  $.get('/tweets', renderTweets);
 
   //When the button is clicked, ie when the form is submitted
   $('button').click(function(event) {
     event.preventDefault();
     const data = $('form').serialize();
-    const dataLength = (getText(data)).length;
+    const dataLength = getText(data).length;
 
     if (dataLength > 140) {
       resetErrorMessage('over count');
@@ -104,16 +108,18 @@ $(document).ready(function() {
       resetErrorMessage('empty');
     } else {
       resetErrorMessage();
-      const dataToPost = ajaxPost('/tweets', data, function() {
-        //get the tweets immediately after submitting
-        $.get('/tweets', function(data) {
-          renderTweets(data);
-        });
+      ajaxPost('/tweets', data, function() {
+        //Get the tweets immediately after submitting
+        $.get('/tweets', renderTweets);
         //Empty the textarea after submission
         $('textarea').val("");
       });
+      //Reset the character counter to 140 after submitting the tweet
+      $(this)
+        .closest(".new-tweet")
+        .find(".counter")
+        .removeClass("negative-count")
+        .text(140);
     }
   });
 });
-
-
