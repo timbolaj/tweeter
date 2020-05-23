@@ -99,7 +99,7 @@ $(document).ready(function() {
   })
   
   //Get the tweets
-  const getTweets = $.get('/tweets', renderTweets);
+  $.get('/tweets', renderTweets);
 
   //Set as hidden the new-tweet form
   $('.new-tweet').hide();
