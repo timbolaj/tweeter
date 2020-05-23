@@ -20,7 +20,8 @@
 .nav-Bar footer .write {
   outline: none;
   border: none;
-  background-color: #4056A1;
+  background-color: #9e6900;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   color: #ffffff;
   font-family: 'Sans-serif';
   display: flex;
@@ -62,5 +63,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .nav-Bar footer .write {
+    background-color: #4056A1;
+    background-image: none;
   }
 }
