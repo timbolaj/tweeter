@@ -26,9 +26,25 @@
   font-weight: 10%;
 }
 
-.nav-Bar footer i {
-  color: red;
+/* Animation Code */
+@keyframes bouncing-arrow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(+10px); }
+  100% { transform: translateY(0); }
 }
+
+.nav-Bar footer .fas {
+  color: red;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.nav-Bar footer .fa-angle-double-down {
+  animation-name: bouncing-arrow;
+  animation-timing-function: ease;
+}
+
 
 @media only screen and (min-width:1024px) {
   .nav-Bar {
