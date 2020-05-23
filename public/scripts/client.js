@@ -96,8 +96,16 @@ $(document).ready(function() {
   //Get the tweets
   $.get('/tweets', renderTweets);
 
+  //Set as hidden the new-tweet form
+  $('.new-tweet').hide();
+
+  //Toggle button 1
+  $('.write').click(function(event) {
+    $('.new-tweet').slideToggle('slow');
+  })
+
   //When the button is clicked, ie when the form is submitted
-  $('button').click(function(event) {
+  $('.submit-and-display button').click(function(event) {
     event.preventDefault();
     const data = $('form').serialize();
     const dataLength = getText(data).length;
