@@ -54,6 +54,11 @@ const renderTweets = arrayOfTweetObj => {
   }
 };
 
+const renderLastTweet = arrayOfTweetObj => {
+  const lastTweet = arrayOfTweetObj[arrayOfTweetObj.length - 1]
+  $('.tweet-container').prepend(createTweetElement(lastTweet));
+}
+
 const ajaxPost = (url, data, callback) => {
   $.post(url, data, callback);
 };
@@ -94,7 +99,7 @@ $(document).ready(function() {
   })
   
   //Get the tweets
-  $.get('/tweets', renderTweets);
+  const getTweets = $.get('/tweets', renderTweets);
 
   //Set as hidden the new-tweet form
   $('.new-tweet').hide();
@@ -117,8 +122,8 @@ $(document).ready(function() {
     } else {
       resetErrorMessage();
       ajaxPost('/tweets', data, function() {
-        //Get the tweets immediately after submitting
-        $.get('/tweets', renderTweets);
+        //Get the tweet that was just posted
+        $.get('/tweets', renderLastTweet);
         //Empty the textarea after submission
         $('textarea').val("");
       });
