@@ -55,9 +55,9 @@ const renderTweets = arrayOfTweetObj => {
 };
 
 const renderLastTweet = arrayOfTweetObj => {
-  const lastTweet = arrayOfTweetObj[arrayOfTweetObj.length - 1]
+  const lastTweet = arrayOfTweetObj[arrayOfTweetObj.length - 1];
   $('.tweet-container').prepend(createTweetElement(lastTweet));
-}
+};
 
 const ajaxPost = (url, data, callback) => {
   $.post(url, data, callback);
@@ -93,10 +93,10 @@ const resetErrorMessage = violation => {
 
 $(document).ready(function() {
   //Auto-resize the textbox
-  $('textarea').on('input', function () {
+  $('textarea').on('input', function() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
-  })
+  });
   
   //Get the tweets
   $.get('/tweets', renderTweets);
@@ -107,7 +107,7 @@ $(document).ready(function() {
   //Toggle button 1
   $('.write').click(function(event) {
     $('.new-tweet').slideToggle('slow');
-  })
+  });
 
   //When the button is clicked, ie when the form is submitted
   $('.submit-and-display button').click(function(event) {
